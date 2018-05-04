@@ -1,0 +1,60 @@
+/* 全局搜索样式 */
+.search-container {
+  color: #999999;
+  font-size: 30rpx;
+}
+
+.search-bar {
+  height: 64rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #F2F2F2;
+}
+
+.search-bar swiper-item {
+  line-height: 64rpx;
+  margin-left: 80rpx;
+}
+
+/* 楼层跳跃列表 */
+.list-container {
+  position: relative;
+}
+
+.list-container scroll-view view:nth-child(2n) {
+  height: 100rpx;
+  background-color: pink;
+}
+
+.list-container scroll-view view:nth-child(2n+1) {
+  height: 100rpx;
+  background-color: yellow;
+}
+
+.list-sider-bar {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+/* 水平方向列表样式 */
+.horizontal-list-container {
+  padding: 20rpx;
+  border: 1px solid #ddd;
+}
+
+.horizontal-list-container scroll-view {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.horizontal-list-container scroll-view view {
+  width: 200rpx;
+  height: 300rpx;
+  margin-right: 50rpx;
+  display: inline-block;
+  background-color: #ddd;
+}

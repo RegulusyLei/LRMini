@@ -1,0 +1,6 @@
+<view wx:if="{{toastShow}}" class="custom-toast">
+  <view class="{{toastStyle ? 'long' : 'normal'}}">
+    <image wx:if="{{!toastStyle}}" src="./images/correct.png"></image> 
+    <text>{{toastText}}</text>
+  </view>
+</view>

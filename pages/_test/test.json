@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "LContainer": "../../components/container/container"
+  }
+}

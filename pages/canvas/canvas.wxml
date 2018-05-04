@@ -1,0 +1,11 @@
+<view class="page-body">
+  <view class="page-body-wrapper">
+    <canvas canvas-id="myCanvas" class="canvas">
+      <!-- <image src="./images/img.jpg"></image>
+      <text>等到花儿都谢了！阿斯顿马丁DB11V6有望明年上市！</text>
+      <span>自从阿斯顿·马丁诞生以来，似乎就是优雅的代名词，骨子里就带着一种英伦贵族的翩翩绅</span> -->
+    </canvas>
+    <button bindtap="drawToImage">保存到手机</button>
+    <button bindtap="jumpPage">跳转</button>
+  </view>
+</view>

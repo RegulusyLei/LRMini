@@ -1,0 +1,3 @@
+<view class="custom-popup {{popArrow == 1 ? 'custom-popup-arrow-up-left' : popArrow == 2 ? 'custom-popup-arrow-up-right' : popArrow == 3 ? 'custom-popup-arrow-down-right' : popArrow == 4 ? 'custom-popup-arrow-down-left' : 'custom-popup-arrow-none'}}" wx:if="{{popShow}}" style="{{popStyle}}">
+  <text bindtap="emitClick">{{popText}}</text>
+</view>

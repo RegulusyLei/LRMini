@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "LActionsheet": "../actionsheet/actionsheet",
+    "LToast": "../toast/toast",
+    "LPopup": "../popup/popup"
+  }
+}

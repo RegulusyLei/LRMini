@@ -1,0 +1,70 @@
+ <LContainer props="{{props}}" bindpopconfirm="testFn">
+  <view class="search-container" bindtap="viewTap">
+    <swiper class="search-bar" autoplay="true" interval="2000" duration="200" vertical="true" circular="true">
+      <swiper-item wx:for="{{searchTxts}}" wx:key="{{item.index}}">
+        {{item}}
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="horizontal-list-container">
+    <view>趣味小视频</view>
+    <scroll-view scroll-x style="100%">
+      <view>1</view>
+      <view>2</view>
+      <view>3</view>
+      <view>4</view>
+      <view>5</view>
+      <view>6</view>
+    </scroll-view>
+  </view>
+  <view>
+    <view>开车啦</view>
+    <view>
+      <text>等到花儿都谢了！阿斯顿马丁电动版DB11有望明年上市</text>
+      <image></image>
+    </view>
+  </view>
+  <button bindtap="configUserInfo">获取用户信息第一种方式</button>
+  <button open-type="getUserInfo" bindgetuserinfo="configUserInfo2">获取用户信息第二种方式</button>
+  <button open-type="getPhoneNumber" bindgetphonenumber="configUserPhone">获取用户手机号</button>
+  <button bindtap="configUserPhoto">获取用户相册权限</button>
+  <button bindtap="showToast">显示Toast</button>
+  <button bindtap="viewVideo">全屏幕视频</button>
+  <button bindtap="viewCanvas">生成海报</button>
+  <view style="position: relative; text-align: center;">
+    <text catchtap="showPopup" data-popkey="23">显示Popuppppppppppppppp</text>
+  </view>
+  <view style="text-align: center;">
+    <button open-type="share">分享到朋友圈</button>
+    <button open-type="share">分享给朋友</button>
+  </view>
+  <view class="list-container">
+     <scroll-view scroll-y style="height: 200px;" scroll-into-view="{{toView}}" scroll-with-animation="true" enable-back-to-top="true">
+      <view id="aaa">列表内容1</view>
+      <view>列表内容2</view>
+      <view>列表内容3</view>
+      <view>列表内容4</view>
+      <view>列表内容5</view>
+      <view>列表内容6</view>
+      <view>列表内容7</view>
+      <view>列表内容8</view>
+      <view>列表内容9</view>
+      <view id="bbb">列表内容10</view>
+      <view>列表内容11</view>
+      <view>列表内容12</view>
+      <view>列表内容13</view>
+      <view>列表内容14</view>
+      <view>列表内容15</view>
+      <view>列表内容16</view>
+      <view>列表内容17</view>
+      <view>列表内容18</view>
+      <view>列表内容19</view>
+      <view id="ccc">列表内容20</view>
+    </scroll-view> 
+    <view class="list-sider-bar">
+      <view bindtap="jumpView" data-num="aaa">1</view>
+      <view bindtap="jumpView" data-num="bbb">10</view>
+      <view bindtap="jumpView" data-num="ccc">20</view>
+    </view>
+  </view>
+</LContainer>

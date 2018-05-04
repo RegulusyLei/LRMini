@@ -1,0 +1,4 @@
+<div>
+  <video id="myVideo" src="{{src}}" controls="{{false}}" objectFit="fill" duration="{{123}}"></video>
+  <view bindtap="backToHome">回到首页</view>
+</div>
