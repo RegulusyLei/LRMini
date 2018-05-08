@@ -39,8 +39,8 @@ Page({
   },
   // 显示toast
   showToast () {
-    // utils.controlToast.call(this, '企鹅爱车将减少该类型资讯推荐', true)
-    utils.controlToast.call(this, '成功提示')
+    utils.controlToast.call(this, '企鹅爱车将减少该类型资讯推荐', true)
+    // utils.controlToast.call(this, '成功提示')
   },
   // 显示popup
   showPopup (e) {

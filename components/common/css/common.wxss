@@ -1,0 +1,3 @@
+.font-primary {
+  font-size: 30rpx;
+}

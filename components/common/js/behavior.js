@@ -1,6 +1,7 @@
-const utils = require('./utils.js')
+const utils = require('../../../utils/utils.js')
 const app = getApp()
 let postionX = 0
+let postionY = 0
 
 module.exports = Behavior({
   methods: {
@@ -10,17 +11,16 @@ module.exports = Behavior({
     },
     // 触摸屏幕事件
     touchstartEvent(e) {
+      utils.pullDownEvent(e)
       postionX = e.changedTouches[0].clientX
+      postionY = e.changedTouches[0].clientY
     },
     // 触摸离开事件
     touchendEvent(e) {
-      let direction = postionX - e.changedTouches[0].clientX
-      if (direction < 0 && Math.abs(direction) > 200) { // 向右滑动
-        // 返回前一个页面
-        // wx.navigateBack({
-        //   delta: 1
-        // })
-      }
+      let horizontal_d = postionX - e.changedTouches[0].clientX
+      utils.scrollOnHorizontal(horizontal_d)
+      let vertical_d = postionY - e.changedTouches[0].clientY
+      utils.scrollOnVertical(vertical_d)
     }
   }
 })

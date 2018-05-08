@@ -1,4 +1,5 @@
 <view class="com-container" bindtap="bindtapEvent" bindtouchstart="touchstartEvent" bindtouchend="touchendEvent">
+  <LPulldown pulldown-show="{{props.pulldown.show}}"></LPulldown>
   <slot></slot>
   <LToast toast-show="{{props.toast.show}}" toast-text="{{props.toast.text}}" toast-style="{{props.toast.style}}"></LToast>
   <LPopup pop-show="{{props.pop.show}}" pop-style="{{props.pop.style}}" pop-arrow="{{props.pop.arrow}}" pop-key="{{props.pop.key}}" bindpopevent="popConfirm"></LPopup>

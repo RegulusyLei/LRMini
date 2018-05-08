@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
+    "LPulldown": "../pulldown/pulldown",
     "LActionsheet": "../actionsheet/actionsheet",
     "LToast": "../toast/toast",
     "LPopup": "../popup/popup"

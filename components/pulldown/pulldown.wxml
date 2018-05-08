@@ -1,0 +1,3 @@
+<view wx:if="{{pulldownShow}}" class="font-primary custom-pulldown">
+  <text>{{pulldownText}}</text>
+</view>

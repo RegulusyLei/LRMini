@@ -1,4 +1,4 @@
-const behavior = require('../../utils/behavior.js')
+const behavior = require('../common/js/behavior.js')
 
 Component({
   behaviors: [behavior],

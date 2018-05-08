@@ -13,7 +13,7 @@ const initPageInstance = that => {
 const initPageStatus = function (that) {
   if (typeof that == 'boolean' && that) { // 传入boolean类型，且值为true，表示含有popup的当前页
     this.hidePopup.call(app.globalData.activePageInstance)
-  }else{
+  } else {
     this.hidePopup.call(that) // 为页面绑定隐藏popup事件
   }
 }
@@ -35,6 +35,65 @@ const navigateTo = url => {
   wx.navigateTo({
     url: url
   })
+}
+
+/**
+ * 水平滑动事件
+ * direction 为正 向左滑动
+ * direction 为负 向右滑动
+ */
+const scrollOnHorizontal = direction => {
+  if (direction < 0 && Math.abs(direction) > 200) { // 向右滑动
+    // 返回前一个页面
+    // wx.navigateBack({
+    //   delta: 1
+    // })
+  }
+}
+
+/**
+ * 垂直滑动事件
+ * direction 为正 向上滑动
+ * direction 为负 向下滑动
+ */
+const scrollOnVertical = direction => {
+  // console.log(direction)
+}
+
+/**
+ * 检测页面是否划到顶部事件
+ */
+const pullDownEvent = e => {
+  if (e.changedTouches[0].pageY == e.changedTouches[0].clientY) { // 划到顶部了
+    // showPulldown.call(app.globalData.activePageInstance)
+  } else if (e.changedTouches[0].pageY > e.changedTouches[0].clientY) { // 没到顶部
+
+  }
+}
+
+/**
+ * 显示下拉
+ */
+const showPulldown = function () {
+  this.setData({
+    props: {
+      pulldown: {
+        show: true
+      }
+    }
+  })
+  let tempArr = ['.', '..', '...']
+  let tempNum = 0
+  setInterval( () => {
+    tempNum ++
+    this.setData({
+      props: {
+        pulldown: {
+          text: true
+        }
+      }
+    })
+  }, 500)
 }
 
 /**
@@ -77,13 +136,13 @@ const showPopup = function (ele, confirm) {
   // 定位popup
   if (horizontal > 170 && vertical > 70) { // 三角左上角
     var arrow = 1,
-        tempStr = `top:${ele.detail.y + 25}px; left:${ele.detail.x - 13}px`
+      tempStr = `top:${ele.detail.y + 25}px; left:${ele.detail.x - 13}px`
   } else if (horizontal < 170 && vertical > 70) { // 三角在右上角
     var arrow = 2,
-        tempStr = `top:${ele.detail.y + 25}px; left:${ele.detail.x - 167}px`
+      tempStr = `top:${ele.detail.y + 25}px; left:${ele.detail.x - 167}px`
   } else if (horizontal < 170 && vertical < 70) { // 三角在右下角
     var arrow = 3,
-        tempStr = `top:${ele.detail.y - 70}px; left:${ele.detail.x - 167}px`
+      tempStr = `top:${ele.detail.y - 70}px; left:${ele.detail.x - 167}px`
   } else if (horizontal > 170 && vertical < 70) { // 三角在左下角
     var arrow = 4,
       tempStr = `top:${ele.detail.y - 70}px; left:${ele.detail.x - 13}px`
@@ -193,6 +252,9 @@ const getRandomColor = () => {
 module.exports = {
   initPageInstance: initPageInstance,
   initPageStatus: initPageStatus,
+  scrollOnHorizontal: scrollOnHorizontal,
+  scrollOnVertical: scrollOnVertical,
+  pullDownEvent: pullDownEvent,
   setNavStyle: setNavStyle,
   navigateTo: navigateTo,
   configAuthorize: configAuthorize,
